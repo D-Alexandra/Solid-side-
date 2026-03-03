@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developerská Firma</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button id="lang-sk">Slovenský</button></li>
+                <li><button id="lang-en">English</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <h1>Vitajte v našej developerskej firme</h1>
+            <p>Vytvárame budúcnosť s kvalitou a inováciami.</p>
+            <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Kontaktujte nás</button>
+            <button onclick="document.getElementById('paypal-button-container').scrollIntoView({ behavior: 'smooth' });" style="margin-top: 1rem;">Kúpiť voucher</button>
+            <div class="hero-image"></div>
+            <img src="https://via.placeholder.com/300" alt="Žena" style="margin-top: 2rem; border-radius: 50%; width: 150px; height: 150px;">
+            <div class="numbered-buttons" style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                <!-- Generate buttons from 1 to 30 -->
+                <script>
+                    for (let i = 1; i <= 30; i++) {
+                        document.write(`<button style='padding: 0.5rem 1rem;'>${i}</button>`);
+                    }
+                </script>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about">
+            <h2>O nás</h2>
+            <p>Sme profesionálna developerská firma zameraná na kvalitu, transparentnosť a inovácie.</p>
+            <div class="values">
+                <div class="value">
+                    <span class="icon">🔧</span>
+                    <h3>Kvalita</h3>
+                </div>
+                <div class="value">
+                    <span class="icon">🔍</span>
+                    <h3>Transparentnosť</h3>
+                </div>
+                <div class="value">
+                    <span class="icon">💡</span>
+                    <h3>Inovácie</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Kontakt</h2>
+            <form>
+                <label for="name">Meno</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Správa</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Odoslať</button>
+            </form>
+            <div class="contact-info">
+                <p>📞 +421 123 456 789</p>
+                <p>✉️ info@developerskafirma.sk</p>
+            </div>
+
+            <!-- PayPal Button -->
+            <div id="paypal-button-container" style="margin-top: 2rem;"></div>
+            <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=EUR"></script>
+            <script>
+                paypal.Buttons({
+                    createOrder: function(data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                description: 'Voucher',
+                                amount: {
+                                    value: '100.00' // Price of the voucher
+                                }
+                            }]
+                        });
+                    },
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details) {
+                            alert('Thank you for your purchase, ' + details.payer.name.given_name + '!');
+                        });
+                    },
+                    onError: function(err) {
+                        console.error('An error occurred during the transaction:', err);
+                    }
+                }).render('#paypal-button-container');
+            </script>
+        </section>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
 
