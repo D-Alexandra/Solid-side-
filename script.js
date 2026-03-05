@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initBackToTop();
     initCurrentYear();
+    initNewsCarousel();
 });
 
 /**
@@ -258,4 +259,54 @@ function initCurrentYear() {
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
+}
+
+/**
+ * News Carousel - Swiper.js
+ */
+function initNewsCarousel() {
+    const newsSwiper = document.querySelector('.news-swiper');
+    if (!newsSwiper) return;
+    
+    // Check if Swiper is loaded
+    if (typeof Swiper === 'undefined') {
+        console.warn('Swiper.js not loaded');
+        return;
+    }
+    
+    const swiper = new Swiper('.news-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        grabCursor: true,
+        
+        // Pagination
+        pagination: {
+            el: '.news-swiper-pagination',
+            clickable: true,
+        },
+        
+        // Navigation arrows
+        navigation: {
+            nextEl: '.news-carousel__btn--next',
+            prevEl: '.news-carousel__btn--prev',
+        },
+        
+        // Responsive breakpoints
+        breakpoints: {
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+            },
+        },
+        
+        // Accessibility
+        a11y: {
+            prevSlideMessage: 'Predchádzajúci článok',
+            nextSlideMessage: 'Nasledujúci článok',
+        },
+    });
 }
