@@ -8,8 +8,10 @@
     <title>Solid Side | Advokátska kancelária Trenčín</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -18,7 +20,7 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="index.html" class="nav__logo">
-                <img src="../images/logo-na-web.svg" alt="Solid Side - Advokátska kancelária">
+                <img src="../images/Logo-slovo.svg" alt="Solid Side - Advokátska kancelária">
             </a>
             
             <ul class="nav__menu" id="nav-menu">
@@ -38,33 +40,42 @@
     </header>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero hero--fullscreen" id="hero">
         <div class="hero__background"></div>
-        <div class="hero__content container">
-            <div class="fade-in">
-                <h1 class="hero__title">
-                    <span class="hero__title-line">Právna istota</span>
-                    <span class="hero__title-line hero__title-line--accent">v každom rozhodnutí</span>
-                </h1>
-                <p class="hero__subtitle">
-                    Strategické právne poradenstvo postavené na odbornosti, diskrétnosti a dlhoročných skúsenostiach. Váš spoľahlivý partner v komplexných právnych záležitostiach.
-                </p>
+        <div class="hero__logo-wrapper">
+            <img src="../images/logo-na-web.svg" alt="Solid Side" class="hero__logo">
+        </div>
+        <button class="hero__scroll-indicator" id="scroll-indicator" aria-label="Scrollovať nižšie">
+            <div class="hero__scroll-arrow"></div>
+        </button>
+    </section>
+
+    <!-- STATEMENT SECTION -->
+    <section class="statement" id="statement">
+        <div class="statement__content">
+            <div class="statement__text">
+                <p><a href="o-nas.html" class="statement__link">My<span class="statement__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a> vieme, že v práve rozhodujú detaily a v biznise rozhodujú výsledky.</p>
+                <p>Klientom poskytujeme právne <a href="sluzby.html" class="statement__link">služby<span class="statement__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a> v širokom spektre právnych oblastí.</p>
+                <p>Najnovšie <a href="aktuality.html" class="statement__link">právne články<span class="statement__arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a> prinášajú kontext k tomu, čo sa v práve mení.</p>
             </div>
         </div>
     </section>
 
     <!-- AKTUALITY - CAROUSEL -->
-    <section class="section section--dark">
+    <section class="section section--hero-continuation" id="aktuality">
         <div class="container">
+            <div class="section__header fade-in">
+                <div class="section__divider"></div>
+                <span class="section__label">Aktuality</span>
+                <h2 class="section__title">Právne novinky</h2>
+            </div>
+            
             <div class="news-carousel fade-in">
                 <div class="swiper news-swiper">
                     <div class="swiper-wrapper">
                         
                         <div class="swiper-slide">
-                            <a href="clanok-obchodny-zakonnik.html" class="news-carousel-card">
-                                <div class="news-carousel-card__image">
-                                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=250&fit=crop" alt="Obchodný zákonník">
-                                </div>
+                            <a href="clanok-obchodny-zakonnik.html" class="news-carousel-card news-carousel-card--no-image">
                                 <div class="news-carousel-card__content">
                                     <time class="news-carousel-card__date" datetime="2026-03-01">1. marca 2026</time>
                                     <h3 class="news-carousel-card__title">Zmeny v Obchodnom zákonníku 2026</h3>
@@ -74,10 +85,7 @@
                         </div>
                         
                         <div class="swiper-slide">
-                            <a href="clanok-home-office.html" class="news-carousel-card">
-                                <div class="news-carousel-card__image">
-                                    <img src="https://images.unsplash.com/photo-1587614313085-5da51cebd8ac?w=400&h=250&fit=crop" alt="Home office">
-                                </div>
+                            <a href="clanok-home-office.html" class="news-carousel-card news-carousel-card--no-image">
                                 <div class="news-carousel-card__content">
                                     <time class="news-carousel-card__date" datetime="2026-02-25">25. február 2026</time>
                                     <h3 class="news-carousel-card__title">Nové pravidlá pre home office</h3>
@@ -87,10 +95,7 @@
                         </div>
                         
                         <div class="swiper-slide">
-                            <a href="clanok-gdpr.html" class="news-carousel-card">
-                                <div class="news-carousel-card__image">
-                                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=250&fit=crop" alt="GDPR">
-                                </div>
+                            <a href="clanok-gdpr.html" class="news-carousel-card news-carousel-card--no-image">
                                 <div class="news-carousel-card__content">
                                     <time class="news-carousel-card__date" datetime="2026-02-20">20. február 2026</time>
                                     <h3 class="news-carousel-card__title">Aktuálne rozhodnutia v oblasti ochrany údajov</h3>
@@ -100,10 +105,7 @@
                         </div>
                         
                         <div class="swiper-slide">
-                            <a href="aktuality.html" class="news-carousel-card">
-                                <div class="news-carousel-card__image">
-                                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=250&fit=crop" alt="Daňové právo">
-                                </div>
+                            <a href="aktuality.html" class="news-carousel-card news-carousel-card--no-image">
                                 <div class="news-carousel-card__content">
                                     <time class="news-carousel-card__date" datetime="2026-02-15">15. február 2026</time>
                                     <h3 class="news-carousel-card__title">Novela zákona o dani z príjmov</h3>
@@ -113,10 +115,7 @@
                         </div>
                         
                         <div class="swiper-slide">
-                            <a href="aktuality.html" class="news-carousel-card">
-                                <div class="news-carousel-card__image">
-                                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=250&fit=crop" alt="Pracovné právo">
-                                </div>
+                            <a href="aktuality.html" class="news-carousel-card news-carousel-card--no-image">
                                 <div class="news-carousel-card__content">
                                     <time class="news-carousel-card__date" datetime="2026-02-10">10. február 2026</time>
                                     <h3 class="news-carousel-card__title">Ochrana whistleblowerov v praxi</h3>
@@ -126,10 +125,7 @@
                         </div>
                         
                         <div class="swiper-slide">
-                            <a href="aktuality.html" class="news-carousel-card">
-                                <div class="news-carousel-card__image">
-                                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=250&fit=crop" alt="AI regulácia">
-                                </div>
+                            <a href="aktuality.html" class="news-carousel-card news-carousel-card--no-image">
                                 <div class="news-carousel-card__content">
                                     <time class="news-carousel-card__date" datetime="2026-02-05">5. február 2026</time>
                                     <h3 class="news-carousel-card__title">AI Act: Nová regulácia umelej inteligencie</h3>
@@ -163,167 +159,50 @@
         </div>
     </section>
 
-    <!-- O NÁS - KRÁTKO -->
-    <section class="section">
-        <div class="container">
-            <div class="section__header fade-in">
-                <span class="section__label">O kancelárii</span>
-                <h2 class="section__title">Advokátska kancelária s tradíciou</h2>
-            </div>
-            
-            <div class="about-intro__content">
-                <div class="about-intro__text fade-in">
-                    <p class="about-intro__lead">
-                        Advokátska kancelária Solid Side poskytuje komplexné právne služby pre podnikateľské subjekty, korporácie aj fyzické osoby. Naše skúsenosti siahajú naprieč celým spektrom právnych oblastí.
-                    </p>
-                    <p>
-                        Veríme, že úspešná právna služba stojí na troch pilieroch: hlbokej odbornosti, absolútnej diskrétnosti a strategickom prístupe ku každému prípadu.
-                    </p>
-                </div>
-                
-                <div class="about-intro__values fade-in">
-                    <div class="value-card">
-                        <div class="value-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                            </svg>
-                        </div>
-                        <h3 class="value-card__title">Odbornosť</h3>
-                        <p class="value-card__text">Kontinuálne vzdelávanie a špecializácia v kľúčových právnych oblastiach.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <div class="value-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            </svg>
-                        </div>
-                        <h3 class="value-card__title">Diskrétnosť</h3>
-                        <p class="value-card__text">Absolútna dôvernosť všetkých informácií zverených do našej starostlivosti.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <div class="value-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                            </svg>
-                        </div>
-                        <h3 class="value-card__title">Stratégia</h3>
-                        <p class="value-card__text">Premyslený prístup orientovaný na dlhodobé ciele klienta.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <div class="value-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                        </div>
-                        <h3 class="value-card__title">Partnerstvo</h3>
-                        <p class="value-card__text">Budujeme dlhodobé vzťahy založené na vzájomnej dôvere.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- SLUŽBY - PREHĽAD -->
-    <section class="section section--dark">
+    <section class="section section--light">
         <div class="container">
-            <div class="section__header fade-in">
-                <span class="section__label">Právne služby</span>
-                <h2 class="section__title">Čím vám môžeme pomôcť</h2>
-                <p class="section__description">Poskytujeme komplexné právne služby v štyroch hlavných oblastiach.</p>
+            <div class="section__header section__header--center fade-in">
+                <h2 class="section__title">Právne služby</h2>
+                <div class="section__divider"></div>
+                <p class="section__description">Široké pole odbornej pôsobnosti. Efektívne riešenia. Individualizovaný klientsky servis.<br>Všetko, čo vy a vaša firma potrebujete pre komplexné pokrytie právnych potrieb.</p>
             </div>
             
-            <div class="services-overview__grid fade-in">
-                <a href="sluzby.html" class="service-overview-card">
-                    <div class="service-overview-card__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="service-overview-card__title">Obchodné právo</h3>
-                        <p class="service-overview-card__text">Korporátne právo, M&A, konkurz a reštrukturalizácia, právne audity, obchodné zmluvy.</p>
-                    </div>
-                </a>
-                
-                <a href="sluzby.html" class="service-overview-card">
-                    <div class="service-overview-card__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9,22 9,12 15,12 15,22"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="service-overview-card__title">Občianske právo</h3>
-                        <p class="service-overview-card__text">Nehnuteľnosti, zmluvné právo, dedičstvo, náhrada škody, spotrebiteľské spory.</p>
-                    </div>
-                </a>
-                
-                <a href="sluzby.html" class="service-overview-card">
-                    <div class="service-overview-card__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="service-overview-card__title">Rodinné právo</h3>
-                        <p class="service-overview-card__text">Rozvod, výživné, starostlivosť o deti, majetkové vysporiadanie manželov.</p>
-                    </div>
-                </a>
-                
-                <a href="sluzby.html" class="service-overview-card">
-                    <div class="service-overview-card__icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="12" y1="8" x2="12" y2="12"/>
-                            <line x1="12" y1="16" x2="12.01" y2="16"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="service-overview-card__title">Trestné právo</h3>
-                        <p class="service-overview-card__text">Obhajoba v trestnom konaní, zastupovanie poškodených, hospodárska kriminalita.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- VÝHODY -->
-    <section class="section">
-        <div class="container">
-            <div class="section__header fade-in">
-                <span class="section__label">Prečo my</span>
-                <h2 class="section__title">Výhody spolupráce</h2>
+            <div class="services-grid services-grid--homepage fade-in">
+                <div class="service-tile">
+                    <h3 class="service-tile__title">Korporátne právo</h3>
+                </div>
+                <div class="service-tile">
+                    <h3 class="service-tile__title">Právo nehnuteľností</h3>
+                </div>
+                <div class="service-tile">
+                    <h3 class="service-tile__title">Sporové právo</h3>
+                </div>
+                <div class="service-tile">
+                    <h3 class="service-tile__title">Fúzie a akvizície</h3>
+                </div>
+                <div class="service-tile">
+                    <h3 class="service-tile__title">Pracovné právo</h3>
+                </div>
+                <div class="service-tile">
+                    <h3 class="service-tile__title">Právne audity</h3>
+                </div>
+                <div class="service-tile">
+                    <h3 class="service-tile__title">Občianskoprávna agenda</h3>
+                </div>
+                <div class="service-tile">
+                    <h3 class="service-tile__title">Financie a bankovníctvo</h3>
+                </div>
             </div>
             
-            <div class="benefits__grid fade-in">
-                <div class="benefit-item">
-                    <h3 class="benefit-item__title">Individuálny prístup</h3>
-                    <p class="benefit-item__text">Každý klient a každý prípad je jedinečný. Dôkladne analyzujeme vašu situáciu a navrhujeme riešenia šité na mieru vašim potrebám.</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <h3 class="benefit-item__title">Transparentnosť</h3>
-                    <p class="benefit-item__text">Jasná komunikácia a predvídateľné náklady na právne služby. Vždy viete, na čom ste a čo môžete očakávať.</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <h3 class="benefit-item__title">Dostupnosť</h3>
-                    <p class="benefit-item__text">Rýchla reakcia na vaše požiadavky. Sme k dispozícii, keď nás potrebujete, a priebežne vás informujeme o stave vašej veci.</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <h3 class="benefit-item__title">Skúsenosti</h3>
-                    <p class="benefit-item__text">Dlhoročná prax naprieč rôznymi oblasťami práva nám umožňuje efektívne riešiť aj komplexné právne výzvy.</p>
-                </div>
+            <div class="section__cta fade-in">
+                <a href="sluzby.html" class="btn-link">
+                    Všetky právne služby
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12,5 19,12 12,19"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>

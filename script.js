@@ -7,13 +7,95 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
+    initHeroScrollEffect();
     initFadeAnimations();
     initAccordion();
     initContactForm();
     initBackToTop();
     initCurrentYear();
     initNewsCarousel();
+    initScrollIndicator();
 });
+
+/**
+ * Scroll indicator - smooth scroll to aktuality section
+ */
+function initScrollIndicator() {
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    const targetSection = document.getElementById('aktuality') || document.getElementById('o-kancelarii');
+    
+    if (!scrollIndicator || !targetSection) return;
+    
+    scrollIndicator.addEventListener('click', function() {
+        const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 1800; // 1.8 seconds - slower, more elegant
+        let startTime = null;
+        
+        // Easing function - easeInOutQuart for ultra-smooth feel
+        function easeInOutQuart(t) {
+            return t < 0.5 
+                ? 8 * t * t * t * t 
+                : 1 - Math.pow(-2 * t + 2, 4) / 2;
+        }
+        
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / duration, 1);
+            const ease = easeInOutQuart(progress);
+            
+            window.scrollTo(0, startPosition + (distance * ease));
+            
+            if (timeElapsed < duration) {
+                requestAnimationFrame(animation);
+            }
+        }
+        
+        requestAnimationFrame(animation);
+    });
+}
+
+/**
+ * Hero scroll effect - logo shrinks and fades on scroll
+ */
+function initHeroScrollEffect() {
+    const hero = document.getElementById('hero');
+    const logoWrapper = document.querySelector('.hero__logo-wrapper');
+    const scrollIndicator = document.querySelector('.hero__scroll-indicator');
+    
+    if (!hero || !logoWrapper) return;
+    
+    let ticking = false;
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                const scrolled = window.pageYOffset;
+                const heroHeight = hero.offsetHeight;
+                const scrollProgress = Math.min(scrolled / (heroHeight * 0.5), 1);
+                
+                // Apply smooth transform and opacity based on scroll
+                const scale = 1 - (scrollProgress * 0.15);
+                const opacity = 1 - scrollProgress;
+                const translateY = scrolled * 0.3;
+                
+                logoWrapper.style.transform = `scale(${scale}) translateY(-${translateY}px)`;
+                logoWrapper.style.opacity = opacity;
+                
+                // Fade out scroll indicator faster
+                if (scrollIndicator) {
+                    const indicatorOpacity = Math.max(0, 0.6 - (scrollProgress * 2));
+                    scrollIndicator.style.opacity = indicatorOpacity;
+                }
+                
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+}
 
 /**
  * Navigácia - sticky header + mobile menu
@@ -129,6 +211,30 @@ function initAccordion() {
             });
         });
     });
+
+    // Auto-open accordion based on URL hash
+    const hash = window.location.hash;
+    if (hash) {
+        const targetCategory = document.querySelector(hash);
+        if (targetCategory && targetCategory.classList.contains('accordion-category')) {
+            // Close all categories first
+            categories.forEach(cat => {
+                cat.classList.remove('active');
+            });
+            // Open the target category
+            targetCategory.classList.add('active');
+            // Scroll to the category with offset for header
+            setTimeout(() => {
+                const headerOffset = 100;
+                const elementPosition = targetCategory.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }, 100);
+        }
+    }
 }
 
 /**
@@ -275,9 +381,11 @@ function initNewsCarousel() {
     }
     
     const swiper = new Swiper('.news-swiper', {
-        slidesPerView: 1,
+        slidesPerView: 1.2,
         spaceBetween: 24,
         grabCursor: true,
+        autoHeight: false,
+        centeredSlides: true,
         
         // Pagination
         pagination: {
@@ -294,12 +402,14 @@ function initNewsCarousel() {
         // Responsive breakpoints
         breakpoints: {
             576: {
-                slidesPerView: 2,
+                slidesPerView: 2.2,
                 spaceBetween: 24,
+                centeredSlides: false,
             },
             992: {
-                slidesPerView: 3,
+                slidesPerView: 3.2,
                 spaceBetween: 32,
+                centeredSlides: false,
             },
         },
         

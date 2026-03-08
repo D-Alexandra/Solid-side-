@@ -7,8 +7,10 @@
     <title>O nás | Solid Side - Advokátska kancelária</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -16,7 +18,7 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="index.html" class="nav__logo">
-                <img src="../images/logo-na-web.svg" alt="Solid Side - Advokátska kancelária">
+                <img src="../images/Logo-slovo.svg" alt="Solid Side - Advokátska kancelária">
             </a>
             
             <ul class="nav__menu" id="nav-menu">
@@ -36,7 +38,7 @@
     </header>
 
     <!-- PAGE HERO -->
-    <section class="page-hero">
+    <section class="page-hero section--overlap-bottom">
         <div class="container">
             <h1 class="page-hero__title">O nás</h1>
             <p class="page-hero__subtitle">Spoznajte advokátsku kanceláriu Solid Side a naše hodnoty</p>
@@ -44,10 +46,10 @@
     </section>
 
     <!-- O KANCELÁRII -->
-    <section class="section">
+    <section class="section section--overlap-top">
         <div class="container">
-            <div class="about-intro__content">
-                <div class="about-intro__text fade-in">
+            <div class="content-block content-block--elevated fade-in">
+                <div class="about-intro__text">
                     <p class="about-intro__lead">
                         Advokátska kancelária Solid Side poskytuje komplexné právne služby pre podnikateľské subjekty, korporácie aj fyzické osoby. Naše skúsenosti siahajú naprieč celým spektrom právnych oblastí s osobitným zameraním na obchodné a korporátne právo.
                     </p>
@@ -66,12 +68,13 @@
     <section class="section section--dark">
         <div class="container">
             <div class="section__header fade-in">
+                <div class="section__divider"></div>
                 <span class="section__label">Naše hodnoty</span>
                 <h2 class="section__title">Na čom stavíme</h2>
             </div>
             
-            <div class="about-intro__values fade-in">
-                <div class="value-card">
+            <div class="overlap-grid fade-in">
+                <div class="overlap-card">
                     <div class="value-card__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
@@ -81,7 +84,7 @@
                     <p class="value-card__text">Kontinuálne vzdelávanie a špecializácia v kľúčových právnych oblastiach. Sledujeme aktuálnu judikatúru a legislatívne zmeny.</p>
                 </div>
                 
-                <div class="value-card">
+                <div class="overlap-card">
                     <div class="value-card__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -91,7 +94,7 @@
                     <p class="value-card__text">Absolútna dôvernosť všetkých informácií zverených do našej starostlivosti. Advokátske tajomstvo je pre nás posvätné.</p>
                 </div>
                 
-                <div class="value-card">
+                <div class="overlap-card">
                     <div class="value-card__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <circle cx="12" cy="12" r="10"/>
@@ -102,7 +105,7 @@
                     <p class="value-card__text">Premyslený prístup orientovaný na dlhodobé ciele klienta. Nevidíme len aktuálny problém, ale celkový obraz.</p>
                 </div>
                 
-                <div class="value-card">
+                <div class="overlap-card">
                     <div class="value-card__icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -112,43 +115,6 @@
                     </div>
                     <h3 class="value-card__title">Partnerstvo</h3>
                     <p class="value-card__text">Budujeme dlhodobé vzťahy založené na vzájomnej dôvere. Naši klienti sa na nás môžu spoľahnúť.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TÍM -->
-    <section class="section">
-        <div class="container">
-            <div class="section__header fade-in">
-                <span class="section__label">Náš tím</span>
-                <h2 class="section__title">Ľudia za úspechom vašich záležitostí</h2>
-            </div>
-            
-            <div class="team__content fade-in">
-                <div class="team__profile">
-                    <div class="team__image-placeholder">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                    </div>
-                    <div class="team__info">
-                        <h3 class="team__name">JUDr. [Meno Priezvisko]</h3>
-                        <p class="team__position">Advokát, zakladateľ kancelárie</p>
-                        <p class="team__bio">
-                            Advokát zapísaný v zozname advokátov Slovenskej advokátskej komory s dlhoročnou praxou v oblasti obchodného a korporátneho práva. Špecializuje sa na komplexné transakcie, M&A a právne poradenstvo pre podnikateľské subjekty.
-                        </p>
-                        <p class="team__bio">
-                            Absolvent Právnickej fakulty s rozšírenou špecializáciou v oblasti medzinárodného obchodu. Skúsenosti získaval v renomovaných advokátskych kanceláriách pôsobiacich na Slovensku aj v zahraničí.
-                        </p>
-                        <div class="team__expertise">
-                            <span class="team__tag">Korporátne právo</span>
-                            <span class="team__tag">M&A</span>
-                            <span class="team__tag">Obchodné zmluvy</span>
-                            <span class="team__tag">Nehnuteľnosti</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
