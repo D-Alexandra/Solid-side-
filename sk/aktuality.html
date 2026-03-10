@@ -39,10 +39,21 @@
 
     <!-- PAGE HERO -->
     <section class="page-hero section--overlap-bottom">
-        <div class="container">
-            <h1 class="page-hero__title">Aktuality</h1>
-            <p class="page-hero__subtitle">Právne novinky a odborné články</p>
+        <div class="container" style="position: relative;">
+            <div style="margin-left: -154%;">
+                <h1 class="page-hero__title" style="font-family: 'Didot', serif; font-size: 4rem; text-align: left; margin-bottom: 0.5rem; margin-left: 0;">Aktuality</h1>
+                <p class="page-hero__subtitle" style="text-align: left; margin-top: 1.2rem; margin-left: 0;">Právne novinky a odborné články</p>
+            </div>
         </div>
+        <style>
+        .page-hero.section--overlap-bottom {
+            background: url('../images/pozadiehory.png') center/cover no-repeat;
+            min-height: 340px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        </style>
     </section>
 
     <!-- AKTUALITY -->
@@ -123,21 +134,21 @@
                 <div class="footer__links">
                     <h4 class="footer__title">Navigácia</h4>
                     <ul class="footer__menu">
-                        <li><a href="index.html">Domov</a></li>
-                        <li><a href="o-nas.html">O nás</a></li>
-                        <li><a href="sluzby.html">Služby</a></li>
-                        <li><a href="aktuality.html">Aktuality</a></li>
-                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="index.html" class="footer__link">Domov</a></li>
+                        <li><a href="o-nas.html" class="footer__link">O nás</a></li>
+                        <li><a href="sluzby.html" class="footer__link">Služby</a></li>
+                        <li><a href="aktuality.html" class="footer__link">Aktuality</a></li>
+                        <li><a href="kontakt.html" class="footer__link">Kontakt</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer__links">
                     <h4 class="footer__title">Služby</h4>
                     <ul class="footer__menu">
-                        <li><a href="sluzby.html">Obchodné právo</a></li>
-                        <li><a href="sluzby.html">Občianske právo</a></li>
-                        <li><a href="sluzby.html">Rodinné právo</a></li>
-                        <li><a href="sluzby.html">Trestné právo</a></li>
+                        <li><a href="sluzby.html" class="footer__link">Obchodné právo</a></li>
+                        <li><a href="sluzby.html" class="footer__link">Občianske právo</a></li>
+                        <li><a href="sluzby.html" class="footer__link">Rodinné právo</a></li>
+                        <li><a href="sluzby.html" class="footer__link">Trestné právo</a></li>
                     </ul>
                 </div>
                 
@@ -153,7 +164,7 @@
             <div class="footer__bottom">
                 <p class="footer__copyright">&copy; <span id="current-year"></span> Solid Side. Všetky práva vyhradené.</p>
                 <div class="footer__legal">
-                    <a href="#">Ochrana súkromia</a>
+                    <a href="#" class="footer__link">Ochrana súkromia</a>
                 </div>
             </div>
         </div>
