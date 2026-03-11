@@ -15,9 +15,20 @@
 </head>
 <body>
                 <style>
-                    body {
-                        background: url('../images/kontakt1.png') center/cover no-repeat;
+                    .contact-bg {
+                        background: url('../images/bilboard.png') center/cover no-repeat;
                         background-attachment: fixed;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100%;
+                        min-height: 0;
+                        z-index: 0;
+                    }
+                    .contact__wrapper, .contact__info-column, .contact__form-wrapper {
+                        position: relative;
+                        z-index: 2;
                     }
                 </style>
                 <!-- HEADER -->
@@ -48,30 +59,15 @@
         </nav>
     </header>
 
-    <!-- PAGE HERO -->
-    <section class="page-hero section--overlap-bottom">
-        <div class="container" style="position: relative;">
-            <div style="margin-left: -140%;">
-                <h1 class="page-hero__title" style="font-family: 'Didot', serif; font-size: 4rem; text-align: left; margin-bottom: 0.5rem; margin-left: 0;">Kontakt</h1>
-                <p class="page-hero__subtitle" style="text-align: left; margin-top: 1.2rem; margin-left: 0;">Ozvite sa nám, radi vám pomôžeme</p>
-            </div>
-        </div>
-        <style>
-        .page-hero.section--overlap-bottom {
-            background: url('../images/pozadiehory.png') center/cover no-repeat;
-            min-height: 340px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        </style>
-    </section>
+    <!-- PAGE HERO REMOVED: The contact image section now starts directly under the navigation bar -->
 
     <!-- KONTAKT -->
     <section class="section section--overlap-top">
-        <div class="container">
-        <div class="container">
-            <div class="contact__wrapper content-block--elevated fade-in">
+            <div class="contact-bg" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0;"></div>
+            <div style="height: 340px;"></div> <!-- Spacer to push cards below 'success matters' text -->
+        <div class="container" style="background: transparent; position: relative; z-index: 2;">
+        <div class="container" style="background: transparent; position: relative; z-index: 2;">
+            <div class="contact__wrapper content-block--elevated fade-in" style="margin-top: 0; background: transparent;">
                 
                 <!-- Ľavá strana - Foto a kontaktné údaje -->
                 <div class="contact__info-column">
@@ -168,7 +164,7 @@
 
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer" style="background: #0a0a0a;">
         <div class="container">
             <div class="footer__content">
                 <div class="footer__brand">

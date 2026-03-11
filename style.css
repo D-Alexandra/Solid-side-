@@ -1,3 +1,14 @@
+/* Force black background for footer on all pages */
+.footer {
+    background: #000 !important;
+    opacity: 1 !important;
+    position: relative !important;
+    margin-top: 0 !important;
+    clear: both;
+    width: 100vw !important;
+    left: 0;
+    z-index: 10;
+}
 /* Footer gold underline effect */
 .footer__link {
     position: relative;

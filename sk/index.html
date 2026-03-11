@@ -41,9 +41,9 @@
 
     <!-- HERO -->
     <section class="hero hero--fullscreen" id="hero">
-        <div class="hero__background" style="background: url('../images/pozadiehory.png') center/cover no-repeat; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
-        <div class="hero__logo-wrapper">
-            <img src="../images/logo-na-web.svg" alt="Solid Side" class="hero__logo">
+        <div class="hero__background" style="background: url('../images/pozadiehory.png'), url('../images/svetlopozadie.png'); background-position: center, center; background-size: cover, contain; background-repeat: no-repeat, no-repeat; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
+        <div class="hero__logo-wrapper" style="display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; z-index: 2;">
+            <img src="../images/logo-na-web.svg" alt="Solid Side" class="hero__logo" style="display: block; margin: 0 auto;" />
         </div>
         <button class="hero__scroll-indicator" id="scroll-indicator" aria-label="Scrollovať nižšie">
             <div class="hero__scroll-arrow"></div>
@@ -152,7 +152,7 @@
     <section class="section section--light">
         <div class="container">
             <div class="section__header section__header--center fade-in" style="display: flex; flex-direction: column; align-items: flex-start; margin-top: -96px;">
-                <h2 class="section__title" style="margin-bottom: 3.5rem;">Právne služby</h2>
+                <h2 class="section__title" style="margin-bottom: 3.5rem;">Čomu sa venujeme</h2>
                 <div style="display: flex; align-items: flex-start;">
                     <div class="section__divider" style="width: 2px; height: 60px; background: var(--color-accent); margin-right: 24px; margin-left: 0;"></div>
                     <div>
